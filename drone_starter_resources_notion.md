@@ -1,0 +1,173 @@
+# Get started with Drones Starter Pack
+
+Curated by yours truly but made with some help with your friendly neighborhood AI
+
+# Drone Starter Resources
+
+A beginner-friendly starting point for exploring drones, UAVs, and human-drone interaction. This guide is especially useful if you enjoy mathematics, data science, optimization, routing, robotics, or interactive systems.
+
+The goal is not to become an aerospace engineer immediately. The goal is to give you several doors into the field so you can see which part of drones feels interesting: building them, controlling them, routing them, programming them, or studying how people interact with them.
+
+*Last curated: 4 May 2026*
+
+---
+
+## How to use this list
+
+A good first pass is:
+
+1. **Watch 1–2 overview videos** to get the physical intuition.
+2. **Skim one broad UAV / autonomy survey** to see the research landscape.
+3. **Read one optimization-adjacent paper** on trajectory generation, path planning, or vehicle routing.
+4. **Try one simulation-first tool** such as PX4 SITL, QGroundControl, or MAVSDK before buying hardware.
+5. **Only then decide** whether the interesting part is control, routing, robotics software, human-drone interaction, or building drones.
+
+---
+
+## 1. Very quick orientation
+
+| Resource | Type | Why it is useful | Link |
+| --- | --- | --- | --- |
+| Unmanned aerial vehicle | Wiki | Good vocabulary starter: UAV, UAS, autonomy levels, civilian/military applications. | [https://en.wikipedia.org/wiki/Unmanned_aerial_vehicle](https://en.wikipedia.org/wiki/Unmanned_aerial_vehicle) |
+| Quadcopter | Wiki | Focuses on the most common research / hobby platform: four rotors, thrust, yaw, pitch, and roll. | [https://en.wikipedia.org/wiki/Quadcopter](https://en.wikipedia.org/wiki/Quadcopter) |
+| “Drones: How do they work?” | YouTube | Clear visual explanation of quadcopter physics, thrust, torque, and basic stabilization. | [https://www.youtube.com/watch?v=N_XneaFmOmU](https://www.youtube.com/watch?v=N_XneaFmOmU) |
+| “Drone and Quadcopter CONTROL system explained for beginners” | YouTube | Useful bridge from “it flies” to “the flight controller is doing feedback control.” | [https://www.youtube.com/watch?v=4iqKp-7RQkk](https://www.youtube.com/watch?v=4iqKp-7RQkk) |
+| “Flight controller basics for beginners” | YouTube | Explains what the onboard computer does and why IMUs, ESCs, and firmware matter. | [https://www.youtube.com/watch?v=xSOaeSd1AlM](https://www.youtube.com/watch?v=xSOaeSd1AlM) |
+
+---
+
+## 2. The shortest possible starter pack
+
+If you want a compact but serious introduction, start with these 10 resources.
+
+| Order | Resource | Type | Why this one |
+| --- | --- | --- | --- |
+| 1 | “Drones: How do they work?” | Video | Fast physical intuition. |
+| 2 | PX4 Basic Concepts / User Guide | Docs | Shows how real open-source autopilot stacks are organized. |
+| 3 | QGroundControl User Guide | Docs | Gives the “operator’s view” of setting up and flying missions. |
+| 4 | Kumar & Michael, “Opportunities and Challenges with Autonomous Micro Aerial Vehicles” | Paper | Broad research map for autonomous micro-UAVs. |
+| 5 | Hoffmann, Waslander & Tomlin, “Quadrotor Helicopter Trajectory Tracking Control” | Paper | Classic waypoint / trajectory tracking view. |
+| 6 | Mellinger & Kumar, “Minimum Snap Trajectory Generation and Control for Quadrotors” | Paper | Strong match if you like math, optimization, and smooth trajectories. |
+| 7 | Ghambari et al., “UAV Path Planning Techniques: A Survey” | Survey paper | Good entry into path planning algorithms. |
+| 8 | Dorling et al., “Vehicle Routing Problems for Drone Delivery” | Paper | Direct link to routing / optimization. |
+| 9 | Tezza & Andujar, “The State-of-the-Art of Human–Drone Interaction” | Survey paper | Introduces HDI as its own research area. |
+| 10 | MAVSDK Python QuickStart / PX4 SITL | Hands-on docs | Lets you command a simulated drone programmatically. |
+
+Links for the above:
+
+- PX4 User Guide: [https://docs.px4.io/main/en/](https://docs.px4.io/main/en/)
+- QGroundControl User Guide: [https://docs.qgroundcontrol.com/](https://docs.qgroundcontrol.com/)
+- Kumar & Michael: [https://journals.sagepub.com/doi/10.1177/0278364912455954](https://journals.sagepub.com/doi/10.1177/0278364912455954)
+- Hoffmann et al.: [https://ai.stanford.edu/~gabeh/papers/GNC08_QuadTraj.pdf](https://ai.stanford.edu/~gabeh/papers/GNC08_QuadTraj.pdf)
+- Mellinger & Kumar: [https://www.semanticscholar.org/paper/Minimum-snap-trajectory-generation-and-control-for-Mellinger-Kumar/b07938d9a0b6a34fe72c2df1b604c0f07fb2a4ca](https://www.semanticscholar.org/paper/Minimum-snap-trajectory-generation-and-control-for-Mellinger-Kumar/b07938d9a0b6a34fe72c2df1b604c0f07fb2a4ca)
+- UAV Path Planning Techniques survey: [https://www.rairo-ro.org/articles/ro/pdf/2024/04/ro220216.pdf](https://www.rairo-ro.org/articles/ro/pdf/2024/04/ro220216.pdf)
+- Dorling et al.: [https://arxiv.org/pdf/1608.02305](https://arxiv.org/pdf/1608.02305)
+- Tezza & Andujar: [https://dblp.org/rec/journals/access/TezzaA19.html](https://dblp.org/rec/journals/access/TezzaA19.html)
+- MAVSDK: [https://mavsdk.mavlink.io/main/](https://mavsdk.mavlink.io/main/)
+
+---
+
+## 3. Core papers and surveys
+
+### A. UAV autonomy, dynamics, and control
+
+| Resource | Level | Why read it |
+| --- | --- | --- |
+| Vijay Kumar & Nathan Michael, **“Opportunities and Challenges with Autonomous Micro Aerial Vehicles”** | Beginner-to-intermediate survey | A broad map of micro-UAV research: perception, control, mobility, manipulation, and applications. Good first academic paper. [https://journals.sagepub.com/doi/10.1177/0278364912455954](https://journals.sagepub.com/doi/10.1177/0278364912455954) |
+| Drew Hanover et al., **“Autonomous Drone Racing: A Survey”** | Intermediate survey | A modern view of high-speed autonomy: perception, planning, control, reinforcement learning, and sim-to-real issues. [https://arxiv.org/abs/2301.01755](https://arxiv.org/abs/2301.01755) |
+
+### B. Path planning, trajectory planning, and routing
+
+| Resource | Level | Why read it |
+| --- | --- | --- |
+| S. Ghambari et al., **“UAV Path Planning Techniques: A Survey”** | Beginner-to-intermediate survey | Broad taxonomy of path planning methods and constraints. Good for connecting A*, RRT, metaheuristics, and learning-based planning. [https://www.rairo-ro.org/articles/ro/pdf/2024/04/ro220216.pdf](https://www.rairo-ro.org/articles/ro/pdf/2024/04/ro220216.pdf) |
+| K. Dorling et al., **“Vehicle Routing Problems for Drone Delivery”** | Intermediate | Directly connects drones to VRP, battery limits, delivery time, and cost trade-offs. Strong match if you enjoy routing and optimization problems. [https://arxiv.org/pdf/1608.02305](https://arxiv.org/pdf/1608.02305) |
+| S. Dang et al., **“A Survey of the Routing Problem for Cooperated Trucks and Drones”** | Intermediate survey | Useful if you like last-mile logistics, truck-drone systems, and routing variants. [https://www.mdpi.com/2504-446X/8/10/550](https://www.mdpi.com/2504-446X/8/10/550) |
+| W. Meng et al., **“Advances in UAV Path Planning: A Comprehensive Review”** | Intermediate survey | More recent overview covering deterministic, stochastic, bio-inspired, and hybrid route-planning methods. [https://www.mdpi.com/2504-446X/9/5/376](https://www.mdpi.com/2504-446X/9/5/376) |
+| Google OR-Tools: **Vehicle Routing Problem** | Hands-on docs | Practical way to start coding routing problems before adding drone-specific constraints. [https://developers.google.com/optimization/routing/vrp](https://developers.google.com/optimization/routing/vrp) |
+
+### C. Human-drone interaction
+
+| Resource | Level | Why read it |
+| --- | --- | --- |
+| Dante Tezza & Marvin Andujar, **“The State-of-the-Art of Human–Drone Interaction: A Survey”** | Beginner survey | Broad overview of HDI, especially for multi-rotor systems, interaction styles, and research themes. [https://dblp.org/rec/journals/access/TezzaA19.html](https://dblp.org/rec/journals/access/TezzaA19.html) |
+| Jessica Cauchard et al., **“Drone & Me: An Exploration Into Natural Human-Drone Interaction”** | Beginner-to-intermediate | Classic elicitation study on how people naturally gesture and communicate with drones. [https://hci.stanford.edu/publications/2015/gestures/paper116.pdf](https://hci.stanford.edu/publications/2015/gestures/paper116.pdf) |
+| Yeh et al., **“Exploring Proxemics for Human-Drone Interaction”** | Beginner-to-intermediate | Good entry point for social distance, comfort, and embodiment around drones. [https://research.chalmers.se/en/publication/254169](https://research.chalmers.se/en/publication/254169) |
+| La Delfa et al., **“Drone Chi: Somaesthetic Human-Drone Interaction”** | Intermediate | A more HCI/design-oriented example showing drones as bodily, expressive, and experiential interaction partners. [https://exertiongameslab.org/wp-content/uploads/2020/02/drone_chi_chi2020.pdf](https://exertiongameslab.org/wp-content/uploads/2020/02/drone_chi_chi2020.pdf) |
+
+---
+
+## 4. Tools and platforms to explore before buying hardware
+
+| Tool | What it is | Why it matters | Link |
+| --- | --- | --- | --- |
+| PX4 | Open-source autopilot stack | Great entry point for modern drone autonomy, simulation, flight modes, and developer workflows. | [https://docs.px4.io/main/en/](https://docs.px4.io/main/en/) |
+| PX4 SITL | Software-in-the-loop simulation | Lets you fly and test algorithms without physical hardware. Start here before propellers. | [https://docs.px4.io/main/en/simulation/](https://docs.px4.io/main/en/simulation/) |
+| ArduPilot Copter | Open-source autopilot ecosystem | Very practical; widely used by hobbyists, researchers, and builders. | [https://ardupilot.org/copter/](https://ardupilot.org/copter/) |
+| ArduPilot First Time Setup | Setup guide | Good for understanding what real drone configuration involves: frame, autopilot, sensors, receiver, calibration. | [https://ardupilot.org/copter/docs/initial-setup.html](https://ardupilot.org/copter/docs/initial-setup.html) |
+| QGroundControl | Ground control station | The GUI used to configure vehicles, plan missions, and monitor flights for PX4/ArduPilot vehicles. | [https://docs.qgroundcontrol.com/](https://docs.qgroundcontrol.com/) |
+| MAVLink | Communication protocol | The common message protocol connecting drones, ground stations, companion computers, and SDKs. | [https://mavlink.io/en/](https://mavlink.io/en/) |
+| MAVSDK | Developer API | Friendly way to command drones from Python/C++/etc. Good for data-science-oriented experimentation. | [https://mavsdk.mavlink.io/main/](https://mavsdk.mavlink.io/main/) |
+| PX4 + ROS 2 | Robotics integration | For autonomy projects using perception, SLAM, planning, and offboard control. | [https://docs.px4.io/main/en/ros2/user_guide](https://docs.px4.io/main/en/ros2/user_guide) |
+| Crazyflie 2.1 | Small open-source research drone | Good later-stage hardware for indoor experiments, swarms, and education. | [https://www.bitcraze.io/crazyflie-2-1/](https://www.bitcraze.io/crazyflie-2-1/) |
+| Crazyswarm2 | ROS 2 stack for Crazyflie teams | Useful if you get interested in multi-drone coordination / swarms. | [https://imrclab.github.io/crazyswarm2/](https://imrclab.github.io/crazyswarm2/) |
+
+---
+
+## 5. YouTube / video paths
+
+| Resource | Best for | Link |
+| --- | --- | --- |
+| “Drones: How do they work?” | Physical intuition and basic flight mechanics. | [https://www.youtube.com/watch?v=N_XneaFmOmU](https://www.youtube.com/watch?v=N_XneaFmOmU) |
+| “Drone and Quadcopter CONTROL system explained for beginners” | Understanding the feedback-control loop. | [https://www.youtube.com/watch?v=4iqKp-7RQkk](https://www.youtube.com/watch?v=4iqKp-7RQkk) |
+| “How to Fly a Quadcopter Drone, Lesson 1” | Basic manual flying vocabulary: throttle, yaw, pitch, roll. | [https://www.youtube.com/watch?v=jW9a65lTE40](https://www.youtube.com/watch?v=jW9a65lTE40) |
+| Joshua Bardwell, “Learn to fly an FPV drone” playlist | If you get curious about actual manual FPV flying. | [https://www.youtube.com/playlist?list=PLwoDb7WF6c8lCKhQOTy-Vb9LfW0VAIrTP](https://www.youtube.com/playlist?list=PLwoDb7WF6c8lCKhQOTy-Vb9LfW0VAIrTP) |
+| PX4 “Getting Started Tips & Tutorials” playlist | If you want open-source drone development rather than consumer-drone flying. | [https://www.youtube.com/playlist?list=PLYy2pGCdhu7xEaNN8krzAKxv74L1mD4OV](https://www.youtube.com/playlist?list=PLYy2pGCdhu7xEaNN8krzAKxv74L1mD4OV) |
+| PX4 Developer Summit playlists | For deeper talks on autonomy, modeling, tuning, ROS, and real-world deployment. | [https://www.youtube.com/@PX4Autopilot](https://www.youtube.com/@PX4Autopilot) |
+
+---
+
+## 6. Suggested learning routes based on what you enjoy
+
+### Route A: “I like optimization and routing”
+
+1. Read Dorling et al., **Vehicle Routing Problems for Drone Delivery**.
+2. Try Google OR-Tools’ basic VRP tutorial.
+3. Add drone constraints one by one: battery range, payload, no-fly zones, time windows, recharge stations.
+4. Compare formulations: TSP/VRP, MILP, heuristic/metaheuristic, graph shortest path, sampling-based motion planning.
+5. Later: connect an optimized waypoint route to QGroundControl or MAVSDK in simulation.
+
+### Route B: “I like control and applied math”
+
+1. Watch the control-system overview video.
+2. Read Hoffmann et al. for trajectory tracking.
+3. Read Mellinger & Kumar for minimum-snap trajectory generation.
+4. Implement a toy 2D minimum-snap / minimum-jerk trajectory between waypoints.
+5. Later: test trajectories in a PX4 SITL simulation.
+
+### Route C: “I like data science / ML”
+
+1. Read the autonomous drone racing survey.
+2. Learn the autonomy pipeline: state estimation → perception → planning → control.
+3. Try simulated drone perception datasets or synthetic camera feeds.
+4. Explore learning-based planning or reinforcement learning only after understanding the classical pipeline.
+5. Later: compare a classical planner with a learned policy in simulation.
+
+### Route D: “I like people, interaction, and design”
+
+1. Read Tezza & Andujar’s HDI survey.
+2. Read Cauchard et al.’s “Drone & Me” paper.
+3. Pick an interaction idea: gestures, voice, distance, drone expressiveness, safety signaling.
+4. Design a small Wizard-of-Oz or video-based study before flying a real drone.
+5. Later: prototype in VR, AR, or with a small indoor drone.
+6. Check out my course materials on Human-Drone Interaction [here](https://www.notion.so/HCI2004-CSC407M-260f510f29df804aa5cae7c287497c31?pvs=21) . You can check out also my personal swarms project I did in BGU [here](https://github.com/jrdndj/personal-swarms). 
+
+### Route E: “I want to build/fly something”
+
+1. Start with simulator-first PX4 or ArduPilot resources.
+2. Learn QGroundControl and mission planning.
+3. Use a tiny / guarded indoor drone before building a custom frame.
+4. Learn battery safety, propeller safety, failsafes, calibration, and local drone rules.
+5. Build only after understanding why flight controllers, ESCs, motors, propellers, batteries, and frames must match.
+
+---
